@@ -331,7 +331,7 @@ a{
 }
 
 .sq_three{
-    width:100px;
+    width:200px;
     position: absolute;
     z-index:3;
     top:20%;
