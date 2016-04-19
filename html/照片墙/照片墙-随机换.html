@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+body{
+	background: url('cat/10.jpg');
+}
+* { margin:0; padding:0; }
+ul { width:510px; height:510px; margin:50px auto;}
+li { width:150px; height:150px; margin:10px; float:left; list-style:none; }
+img { display:block; width:100%; }
+.active { border:2px dashed red; width:146px; height:146px; }
+/*仅仅是测试*/
+span { position:absolute; top:0; left:0; width:100%; height:100%; /*background:rgba(255, 255, 255, 0.5); */color:#fff; font-size:50px; text-align:center; line-height:150px; font-weight:bold; }
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var aLi=document.getElementsByTagName('li');
+	
+	// 仅仅是测试
+	for (var i=0; i<aLi.length; i++)
+	{
+		var oSpan=document.createElement('span');
+		oSpan.innerHTML=i;
+		aLi[i].appendChild(oSpan);
+	}
+	
+	// 布局转换
+	var aPos=[];
+	for (var i=0; i<aLi.length; i++)
+	{
+		var left=aLi[i].offsetLeft;
+		var top=aLi[i].offsetTop;
+		
+		aPos.push({left:left, top:top});
+		
+		aLi[i].style.left=left+'px';
+		aLi[i].style.top=top+'px';
+	}
+	
+	for (var i=0; i<aLi.length; i++)
+	{
+		aLi[i].index=i;
+		aLi[i].style.position='absolute';
+		aLi[i].style.margin=0;
+	}
+	
+	document.onclick=function (){
+		
+		aPos.sort(function (){
+			return Math.random()-0.5;
+		});
+		
+		for (var i=0; i<aLi.length; i++)
+		{
+			move(aLi[i], aPos[i]);
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+	<ul>
+		<li><img src="cat/1.jpg" /></li>
+		<li><img src="cat/2.jpg" /></li>
+		<li><img src="cat/3.jpg" /></li>
+		
+		<li><img src="cat/6.jpg" /></li>
+		<li><img src="cat/8.jpg" /></li>
+		<li><img src="cat/6.jpg" /></li>
+		
+		<li><img src="cat/7.jpg" /></li>
+		<li><img src="cat/8.jpg" /></li>
+		<li><img src="cat/9.jpg" /></li>
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

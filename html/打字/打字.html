@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>打字</title>
+<style>
+span { font-size:50px; font-weight:bold; opacity:0; }
+
+</style>
+<script src="move_new.js"></script>
+<script>
+window.onload=function (){
+	var str='前言：调试技巧，在任何一项技术研发中都可谓是必不可少的技能。掌握各种调试技巧，必定能在工作中起到事半功倍的效果。譬如，快速定位问题、降低故障概率、帮助分析逻辑错误等等。而在互联网前端开发越来越重要的今天，如何在前端开发中降低开发成本，提升工作效率，掌握前端开发调试技巧尤为重要。';
+	var aSpan=[];
+	for (var i=0; i<str.length; i++)
+	{
+		var oSpan=document.createElement('span');
+		oSpan.innerHTML=str.charAt(i);
+		document.body.appendChild(oSpan);
+		aSpan.push(oSpan);
+	}
+	
+	var n=0;
+	var timer=setInterval(function (){
+		move(aSpan[n], {opacity:1});
+		
+		n++;
+		if (n == aSpan.length)
+		{
+			clearInterval(timer);
+		}
+	}, 300);
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

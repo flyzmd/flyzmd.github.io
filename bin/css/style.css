@@ -289,6 +289,7 @@ a{
     width:1100px;
     text-align: center;
     cursor: pointer;
+    color:#fff;
 }
 .sq_tow_msg ul li {
     float:left;
@@ -334,7 +335,7 @@ a{
     width:200px;
     position: absolute;
     z-index:3;
-    top:20%;
+    top:15px;
     left:50%;
     margin-left:-50px;
     font-size: 50px;
@@ -356,7 +357,7 @@ a{
     position: absolute;
     z-index:3;
     width:1205px;
-    top:40%;
+    top:75px;
     left:50%;
     margin-left:-600px;
 }
@@ -366,7 +367,7 @@ a{
     cursor: pointer;
 }
 .sq_three_top{
-    margin-top:15px;
+    margin-top:5px;
 }
 .sq_three_s3{
     position: absolute;

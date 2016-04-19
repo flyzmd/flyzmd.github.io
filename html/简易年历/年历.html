@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>简易日历 </title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('tab');
+		var  oUl=oBox.getElementsByTagName('ul')[0];
+		var oDiv=oBox.getElementsByTagName('div')[0];
+		var oH2=oDiv.getElementsByTagName('h2')[0];
+		var oP=oDiv.getElementsByTagName('p')[0];
+		var  aLi=oUl.children;
+		
+		var arr = ["独家真相：为何中美在南海根本不可能开战？",
+				"荧屏“秀童”不能没底线 《爸爸去哪儿》停播",
+				"贾玲自曝19岁就有男友 回应柳岩被闹事件 ",
+				"章子怡晒抱女儿美照",
+				"八八韩庚郭富城男星身边的神秘女都是谁",
+				"黄景瑜许魏洲领衔刚爆红就遭封杀的明星",
+				"杨幂邓紫棋领衔秀丰满性感翘臀10大女星",
+				"扒当众索吻遭拒好尴尬没面子的男女明星",
+				"细数娱乐圈那些穿透视装最迷人的女星",
+				"扒扒娱乐圈那些演技一流的老戏骨明星们",
+				"种业之囧：国内玉米种子企业无研发能力全线溃败",
+				"我国首颗微重力科学实验卫星成功回收"];		
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index=i;
+			aLi[i]	.onmouseover=function(){
+				for(var i=0; i<aLi.length;i++){
+					aLi[i].className='';	
+				}
+				oP.innerHTML=arr[this.index];
+				oH2.innerHTML=this.children[0].innerHTML+'月活动';
+				this.className='active';
+			};
+		}
+	};
+</script>
+</head>
+
+<body>
+
+<div id="tab" class="calendar">
+
+    <ul>
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    
+    <div class="text">
+        <h2>1月活动</h2>
+        <p>新的一年一定要加油！</p>
+    </div>
+
+</div>
+
+</body>
+</html>
